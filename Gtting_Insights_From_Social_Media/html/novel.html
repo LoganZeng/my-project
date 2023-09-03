@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手机游戏</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="most">
+    <div id="nav" >
+        <h2 id="h2">-类型-</h2>
+        <ul>
+            <ul>
+                <li>
+                    <a href="index.html">-主页</a>
+                </li>
+                <li>
+                    <a href="movie.html">-电影</a>
+                </li>
+                <li id="mytop1">
+                    <a href="novel.html">-小说</a>
+                </li>
+                <li>
+                    <a href="game.html"> -游戏</a>
+                </li>
+            </ul>
+    </div>
+    <div>
+        <img src="../img/wordcloud.png" alt="wordcloud" style="height: 450px; width: 500px; margin-left: 750px ; margin-top: 50px;">
+    </div>
+
+   <div id="main6" style="position: absolute;"></div>
+   <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main6'));
+         
+var option;
+option = {
+  title: {
+    text: '小说热搜榜',
+    padding: [20,20,100,100],
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '1%',
+    right: '1%',
+    bottom: '0%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value',
+    boundaryGap: [0, 0.01]
+  },
+  yAxis: {
+    type: 'category',
+    data: ['  三分野 ', '  我有一剑 ', '  剑来 ', '  万相之王 ', '  深空彼岸 ', '  盖世神医 ', '  绝世强龙 ', '  黑月光拿稳BE剧本 ', '  相亲当天，豪门继承人拉着我领证 ', '  斗罗大陆 ', '  凡人修仙传 ', '  上门龙婿 ', '  修罗武神 ', '  我的冰山女总裁（又名离婚后：高冷女总裁后悔了） ', '  坤宁 ', '  霍先生乖乖宠我 ', '  九星霸体诀 ', '  女总裁的上门女婿 ', '  混沌剑神 ', '  宇宙职业选手 ', '  太荒吞天诀 ', '  女总裁的全能兵王 ', '  执掌风云 ', '  龙王医婿 ', '  斗破苍穹 ', '  正义的使命 ', '  校花的贴身高手 ', '  都市之最强狂兵（又名：都市狂枭） ', '  踏星 ', '  剑道第一仙 ']
+  },
+  series: [
+    {
+      type: 'bar',
+      data: [' 252373 ', ' 212710 ', ' 207503 ', ' 195103 ', ' 108525 ', ' 94644 ', ' 88808 ', ' 88302 ', ' 88121 ', ' 83955 ', ' 82791 ', ' 81992 ', ' 79058 ', ' 78100 ', ' 74313 ', ' 70695 ', ' 68600 ', ' 61492 ', ' 54999 ', ' 54019 ', ' 52460 ', ' 51961 ', ' 50407 ', ' 50185 ', ' 48524 ', ' 45032 ', ' 44310 ', ' 42088 ', ' 40424 ', ' 40419 '],
+      itemStyle:{
+                                    normal:{
+                                        color:'#4682B4'
+                                    }
+                                },
+    }
+  ]
+};
+option && myChart.setOption(option);
+   </script>
+    </div>
+</body>
+</html>

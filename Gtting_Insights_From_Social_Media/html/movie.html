@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络游戏</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="most">
+        <div id="nav" >
+            <h2 id="h2">-类型-</h2>
+            <ul>
+                <li>
+                    <a href="index.html">-主页</a>
+                </li>
+                <li id="mytop3">
+                    <a href="movie.html">-电影</a>
+                </li>
+                <li>
+                    <a href="novel.html">-小说</a>
+                </li>
+                <li>
+                    <a href="game.html"> -游戏</a>
+                </li>
+            </ul>
+            </div>
+            <div>
+                <p style="position: absolute;padding-left: 400px;padding-top: 0px;font-size: 40px;">最受欢迎的小说类型是    </p><p style="position: absolute;padding-left: 825px;padding-top: 0px;font-size: 40px;color:#d37f6f">剧情</p>
+            </div>
+            <div id="main5" style="position: absolute;"></div>
+            <script type="text/javascript">
+                var myChart = echarts.init(document.getElementById('main5'));
+         
+                var option = {
+           tooltip: {
+             trigger: 'item'
+           },
+           legend: {
+             top: '0%',
+             left: 'center'
+           },
+           series: [
+             {
+               name: '小说类型占比',
+               type: 'pie',
+               radius: ['55%', '85%'],
+               avoidLabelOverlap: false,
+               itemStyle: {
+                 borderRadius: 100,
+                 borderColor: '#fff',
+                 borderWidth: 1
+               },
+               label: {
+                 show: false,
+                 position: 'center'
+               },
+               emphasis: {
+                 label: {
+                   show: true,
+                   fontSize: 40,
+                   fontWeight: 'bold'
+                 }
+               },
+               labelLine: {
+                 show: false
+               },
+               data: [
+               {value:209144,name:'爱情'},
+         {value:234344,name:'喜剧'},
+         {value:810989,name:'动作'},
+         {value:869484,name:'剧情'},
+         {value:480282,name:'科幻'},
+         {value:66690,name:'恐怖'},
+         {value:217999,name:'动画'},
+         {value:489303,name:'惊悚'},
+         {value:438896,name:'犯罪'},
+               ]
+             }
+           ]
+         };
+         
+         option && myChart.setOption(option);
+            </script>
+    </div>
+   </div>
+</body>
+</html>

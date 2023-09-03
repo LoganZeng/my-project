@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <link rel="stylesheet" href="../weatherReport/css/style.css">
+</head>
+<body>
+    <div id="app">
+    <div id="topic">
+        天气预报
+    </div>
+    <div id="seaIn">
+    <input placeholder="请输入您的城市ID" v-model="city" @keyup.enter="searchWeather">
+    <div id="sea" @click="searchWeather">搜索</div>
+    </div>
+    <ul>
+        <li v-for="item in weatherList">
+            <div id="weaTy">
+                {{item.textDay}}
+            </div>
+            <div>
+               <b>低温{{item.tempMin}}°C~高温{{item.tempMax}}°C</b> 
+            </div>
+            <div>
+                <p>湿度：{{item.humidity}}</p>
+                <p id="airCo">{{item.windDirDay}}</p>
+            </div>
+            <div>
+                <em id="week">{{item.moonPhase}}</em>
+               <p> {{item.fxDate}}</p>
+            </div>
+        </li>
+    </ul>
+   
+    <div id="hot5" @click="remind">
+        常见城市的城市ID
+    </div>
+    <div id="locationID">
+        <b>
+            关于更多城市ID：<a href="https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv">查询</a>
+        </b>
+    </div>
+</div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../weatherReport/js/vue.js"></script>
+    <script src="../weatherReport/js/main.js"></script> 
+</body>
+</html>

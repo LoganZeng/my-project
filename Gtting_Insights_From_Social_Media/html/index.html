@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Getting Topic Insights from Social Media</title>
+    <link rel="stylesheet" href="../css/mystyle.css">
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+</head>
+<body >
+    <div id="header">
+        <h1>Getting Topic Insights from Social Media</h1>
+        </div>
+        <div id="most">
+            <div id="nav" >
+                <h2 id="h2">-类型-</h2>
+                <ul>
+                    <li id="mytop2">
+                        <a href="index.html">-主页</a>
+                    </li>
+                    <li>
+                        <a href="movie.html">-电影</a>
+                    </li>
+                    <li>
+                        <a href="novel.html">-小说</a>
+                    </li>
+                    <li>
+                        <a href="game.html"> -游戏</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div id="main"></div>
+                <script>
+                var chartDom = document.getElementById('main');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999'
+      }
+    }
+  },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ['热搜指数']
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['小说', '电影', '游戏'],
+      axisPointer: {
+        type: 'shadow'
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: '热度',
+      min: 0,
+      max: 5000000,
+      interval: 200000,
+      axisLabel: {
+        formatter: '{value}'
+      }
+    },
+    {
+      type: 'value',
+      name: '热度',
+      min: 0,
+      max: 5000000,
+      interval: 200000,
+      axisLabel: {
+        formatter: '{value}'
+      }
+    }
+  ],
+  series: [
+    
+    {
+      name: '热搜',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value;
+        }
+      },
+      data: [4478499,3817131,694298]
+    },
+    {
+      name: '热搜指数',
+      type: 'line',
+      yAxisIndex: 1,
+      tooltip: {
+        valueFormatter: function (value) {
+          return value;
+        }
+      },
+      data: [4478499,3817131,694298]
+    }
+  ],
+
+    
+};
+
+option && myChart.setOption(option);
+</script>
+            </div>
+      
+ </div>
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单机游戏</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+<body>
+    <div style="margin-bottom:20px">
+        <div id="most">
+        <div id="nav" >
+            <h2 id="h2">-类型-</h2>
+            <ul>
+                <li>
+                    <a href="index.html">-主页</a>
+                </li>
+                <li>
+                    <a href="movie.html">-电影</a>
+                </li>
+                <li>
+                    <a href="novel.html">-小说</a>
+                </li>
+                <li id="mytop">
+                    <a href="game.html"> -游戏</a>
+                </li>
+                <li >
+                    <a href="top.html"> ▲排行</a>
+                </li>
+            </ul>
+        </div>
+   <div id="main" ></div>
+   <script type="text/javascript">
+       // 基于准备好的dom，初始化echarts实例
+       var myChart = echarts.init(document.getElementById('main'));
+
+       // 指定图表的配置项和数据
+       var option = {
+           title: {
+               text: '单机游戏排行'
+           },
+           grid: {
+            y2 : 100,
+           },
+           tooltip: {},
+           legend: {
+               data:['排行']
+           },
+           xAxis: {
+            axisLabel: {
+                interval: 0,
+                rotate: 47   
+        },
+            type: 'category',
+               data: ['  原神 ', '  植物大战僵尸 ', '  迷你世界 ', '  我的世界 ', '  永劫无间 ', '  艾尔登法环 ', '  荒野大镖客2 ', '  泰拉瑞亚 ', '  使命召唤 ', '  星露谷物语 ', '  饥荒 ', '  赛博朋克2077 ', '  奥特曼格斗进化3 ', '  星之卡比 ', '  愤怒的小鸟 ', '  拳皇97 ', '  拳皇 ', '  魔兽争霸 ', '  空洞骑士 ', '  怪物猎人世界 ', '  怪物猎人 ', '  骑马与砍杀2 ', '  卡牌游戏 ', '  女神异闻录5 ', '  最终幻想 ', '  暗黑破坏神 ', '  全面战争模拟器 ', '  扫雷 ', '  三国群英传 ', '  俄罗斯方块 '],
+           },
+           yAxis: {type: 'value'},
+           series: [{
+               name: '热度',
+               data: [' 100449 ', ' 24718 ', ' 20350 ', ' 20339 ', ' 10217 ', ' 7154 ', ' 7146 ', ' 5744 ', ' 5324 ', ' 2523 ', ' 2189 ', ' 1973 ', ' 1479 ', ' 1438 ', ' 1382 ', ' 1134 ', ' 998 ', ' 863 ', ' 844 ', ' 831 ', ' 821 ', ' 798 ', ' 793 ', ' 748 ', ' 710 ', ' 705 ', ' 677 ', ' 676 ', ' 647 ', ' 644 '],
+               type: 'bar',
+               itemStyle:{
+                                    normal:{
+                                        color:'#20B2AA'
+                                    }
+                                },
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)'
+      }
+           }]
+       };
+
+       // 使用刚指定的配置项和数据显示图表。
+       myChart.setOption(option);
+   </script>
+  
+       <div id="main2" ></div>
+       <script type="text/javascript">
+           // 基于准备好的dom，初始化echarts实例
+           var myChart = echarts.init(document.getElementById('main2'));
+    
+           // 指定图表的配置项和数据
+           var option2 = {
+               title: {
+                   text: '手机游戏排行'
+               },
+               grid: {
+                y2 : 100,
+               },
+               tooltip: {},
+               legend: {
+                   data:['排行']
+               },
+               xAxis: {
+                axisLabel: {
+                    interval: 0,
+                    rotate: 47   
+            },
+                dataZoom:[
+          {
+          show: true,
+          start: 0,
+          end: 50
+        }
+      ],
+                type: 'category',
+                   data: ['  王者荣耀 ', '  和平精英 ', '  蛋仔派对 ', '  香肠派对 ', '  明日方舟 ', '  地铁跑酷 ', '  元气骑士 ', '  球球大作战 ', '  暗区突围 ', '  光遇 ', '  第五人格 ', '  复古传奇 ', '  三国志战略版 ', '  金铲铲之战 ', '  部落冲突 ', '  阴阳师 ', '  荒野乱斗 ', '  狼人杀 ', '  咸鱼之王 ', '  植物大战僵尸2 ', '  JJ斗地主 ', '  明日之后 ', '  坦克世界闪击战 ', '  崩坏3 ', '  樱花校园模拟器 ', '  梦幻西游手游 ', '  中国象棋 ', '  大话西游 ', '  开心消消乐 ', '  武林外传 '],
+               },
+               yAxis: {type: 'value'},
+               series: [{
+                   name: '热度',
+                   data: [' 74444 ', ' 52695 ', ' 40432 ', ' 18783 ', ' 18482 ', ' 16687 ', ' 15619 ', ' 13524 ', ' 12488 ', ' 11930 ', ' 9202 ', ' 8627 ', ' 8449 ', ' 8446 ', ' 6672 ', ' 6569 ', ' 5195 ', ' 4698 ', ' 4629 ', ' 3856 ', ' 3711 ', ' 3446 ', ' 3333 ', ' 3324 ', ' 3321 ', ' 3104 ', ' 2555 ', ' 2340 ', ' 2288 ', ' 2279 '],
+                   type: 'bar',
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(180, 180, 180, 0.2)'
+          }
+               }]
+           };
+    
+           // 使用刚指定的配置项和数据显示图表。
+           myChart.setOption(option2);
+       </script>
+        <div id="main4" ></div>
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main4'));
+     
+            // 指定图表的配置项和数据
+            var option4 = {
+                title: {
+                    text: '网络游戏排行'
+                },
+                grid: {
+                 y2 : 100,
+                },
+                tooltip: {},
+                legend: {
+                    data:['排行']
+                },
+                xAxis: {
+                 axisLabel: {
+                     interval: 0,
+                     rotate: 47   
+             },
+                 type: 'category',
+                    data: ['  梦幻西游 ', '  英雄联盟 ', '  三国杀 ', '  坦克世界 ', '  绝地求生 ', '  云顶之弈 ', '  冒险岛 ', '  魔兽世界 ', '  逃离塔科夫 ', '  逆水寒 ', '  逆战 ', '  激战2 ', '  炉石传说 ', '  森林之子 ', '  双人成行 ', '  守望先锋 ', '  雀魂 ', '  问道 ', '  地下城与勇士 ', '  彩虹岛 ', '  太空狼人杀 ', '  剑灵 ', '  战舰世界 ', '  热血江湖 ', '  枪神纪 ', '  星际战甲 ', '  大话西游2 ', '  战术小队 ', '  龙之谷 ', '  最终幻想14 '],
+                },
+                yAxis: {type: 'value'},
+                series: [{
+                    name: '热度',
+                    data:[' 21929 ', ' 13744 ', ' 7617 ', ' 7542 ', ' 6642 ', ' 4250 ', ' 3302 ', ' 3232 ', ' 3039 ', ' 2776 ', ' 2525 ', ' 2208 ', ' 2057 ', ' 1922 ', ' 1894 ', ' 1393 ', ' 1383 ', ' 1264 ', ' 1227 ', ' 1202 ', ' 927 ', ' 830 ', ' 824 ', ' 814 ', ' 799 ', ' 786 ', ' 706 ', ' 686 ', ' 675 ', ' 661 '],
+                    type: 'bar',
+                    itemStyle:{
+                                         normal:{
+                                             color:'#00688B'
+                                         }
+                                     },
+           showBackground: true,
+           backgroundStyle: {
+             color: 'rgba(180, 180, 180, 0.2)'
+           }
+                }]
+            };
+     
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option4);
+        </script>
+          <div id="main3" style="width: 500px;height:300px;"></div>
+          <script type="text/javascript">
+              var myChart = echarts.init(document.getElementById('main3'));
+       
+              myChart.setOption({
+                  legend: {
+                orient: 'vertical',
+                textStyle: {  fontSize:15, itemHeight: 25,},
+                
+                left: '0%', 
+                y: 'center',  
+                data: ["手机游戏","网络游戏","单机游戏",]
+              },
+                  series : [
+                      {
+                          name: '游戏占比',
+                          type: 'pie',   
+                          radius: '50%',  
+                          label: {
+                      normal: {
+                          show: true,
+                          formatter: '{b}: {c}({d}%)' 
+                      }
+                  },
+                          data:[       
+      
+      {value:371128,name:'手机游戏'},
+      {value:98856,name:'网络游戏'},
+      {value:224314,name:'单机游戏'},
+      
+                          ]
+                      }
+                  ]
+              })
+          </script>
+
+        </div>
+</body>
+</html>
